@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  php:
+    image: php:7.4.8-apache
+    volumes:
+      - ./php.ini:/usr/local/etc/php/php.ini
+      - ./html:/var/www/html
+    ports:
+      - 8888:80
+  mysql:
+    image: mysql:8.0.3
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD = nhinhi0827
+      - MYSQL_DATABASE = test_database
+      - MYSQL_USER = admin_docker
+      - MYSQL_PASSWORD = @@Suguru0824
+      - TZ = Asia/Tokyo
+  phppmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY = 1
+      - PMA_HOST = mysql
+      - PMA_USER = admin_docker
+      - PMA_PASSWORD = @@Suguru0824
+    ports:
+      - 4040:80
+    volumes:
+      - ./phpmyadmin/sessions:/sessions
