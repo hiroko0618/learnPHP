@@ -1,0 +1,37 @@
+body {
+	font-family: "MierB03", "Helvetica", "Arial", sans-serif;
+}
+
+.pt100c {
+        text-align: center;
+        padding-top: 100px;
+}
+
+#btn {
+        background-color: #32CD32;
+        color: #fff;
+	border-radius: 5px;
+	border: none;
+}
+
+#btn:hover {
+	filter: brightness(85%);
+}
+
+input {
+        margin: 0;
+	padding: 5px 0;
+}            
+
+.w300 {
+        width: 300px;   
+} 
+
+.w60 {
+        width: 60px;   
+}
+
+#input-word {
+	font-size: 14px;
+
+}
