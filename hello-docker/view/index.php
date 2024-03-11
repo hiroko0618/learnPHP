@@ -5,32 +5,27 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="css/layout.css">
 	</head>
-	<style>
-		#btn {
-        		background-color: #32CD32;
-        		color: #fff;
-		}
-	</style>
 	<body>
 		<div id="form-area">
-			<form action="index.php" method="post" style="position:relative;">
+			<form action="index.php" method="post">
 				<div>
 					<input type="text" name="keyword" id="input-word"
-					   placeholder="&emsp;あなたの好きな言葉を入力してください">
+					   placeholder="あなたの好きな言葉を入力してください">
 					</input>
 					<input type="submit" value="生成！" id="btn"></input><br />
 				</div>
-				<div style="text-align: left; position:abcolute;">
+				<div class="password">
 					<label for="pass-length">パスワードの長さ</label>
 					<input type="number" name="pass-length" id="pass-length"
 					value=8 min=2 max=30>
 				</div>
 			</form>
+			<hr>
 			<?php
 				if ($_SERVER["REQUEST_METHOD"] == "POST") {
-					$name = $_POST["name"];
-					$num  = $_POST["pass-length"];
-					echo "<p>hello $name + $num</p>";
+					$keyword = $_POST["keyword"];
+					$number  = $_POST["pass-length"];
+					echo "<p>hello $keyword + $number</p>";
 				}
 			?>
 		</div>

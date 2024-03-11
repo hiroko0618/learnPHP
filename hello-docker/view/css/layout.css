@@ -2,7 +2,11 @@ body {
 	font-family: "MierB03", "Helvetica", "Arial", sans-serif;
 }
 
-#form-area, #output-area {
+form {
+	position:relative;
+}
+
+#form-area {
 	width: 400px;
 	text-align: center;
 	padding-top: 100px;
@@ -32,7 +36,8 @@ input {
 	border-style: solid;
 	border-radius: 40px;
 	height: 2em;
-        width: 300px;   
+        width: 300px;
+     	padding-left: 10px;	
 }
 
 label {
@@ -59,7 +64,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-#output-area {
-	background-color: #fff;
-	margin-top: 50px;
+.password {
+	text-align: left; 
+	position:absolute;
 }
