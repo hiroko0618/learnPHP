@@ -2,16 +2,20 @@ body {
 	font-family: "MierB03", "Helvetica", "Arial", sans-serif;
 }
 
-.pt100c {
-        text-align: center;
-        padding-top: 100px;
+#form-area, #output-area {
+	width: 400px;
+	text-align: center;
+	padding-top: 100px;
+	margin: 0 auto;
 }
 
 #btn {
         background-color: #32CD32;
         color: #fff;
-	border-radius: 5px;
 	border: none;
+	border-radius: 50px;
+	height: 3em;
+        width: 60px;   
 }
 
 #btn:hover {
@@ -23,15 +27,39 @@ input {
 	padding: 5px 0;
 }            
 
-.w300 {
+#input-word {
+	border-color: #32CD32;
+	border-style: solid;
+	border-radius: 40px;
+	height: 2em;
         width: 300px;   
-} 
-
-.w60 {
-        width: 60px;   
 }
 
-#input-word {
-	font-size: 14px;
+label {
+	font-size: 12px;
+	color: #666666;
+	margin-left: 30px;
+}
 
+#pass-length {
+	display: inline-block;
+	text-align: right;
+	width: 20px;
+	height: 10px;
+	padding-left: 5px;
+	padding-right: 2px;
+	margin-top: 10px;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: #f0f0f0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#output-area {
+	background-color: #fff;
+	margin-top: 50px;
 }

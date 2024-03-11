@@ -12,11 +12,27 @@
 		}
 	</style>
 	<body>
-		<form action="index.php" method="post" class="pt100c">
-			<input type="text" name="name" class="w300" id="input-word"
-					   placeholder="あなたの好きな言葉を入力してください">
-			</input>
-			<input type="submit" value="生成！" id="btn" class="w60"></input>
-		</form>
+		<div id="form-area">
+			<form action="index.php" method="post" style="position:relative;">
+				<div>
+					<input type="text" name="keyword" id="input-word"
+					   placeholder="&emsp;あなたの好きな言葉を入力してください">
+					</input>
+					<input type="submit" value="生成！" id="btn"></input><br />
+				</div>
+				<div style="text-align: left; position:abcolute;">
+					<label for="pass-length">パスワードの長さ</label>
+					<input type="number" name="pass-length" id="pass-length"
+					value=8 min=2 max=30>
+				</div>
+			</form>
+			<?php
+				if ($_SERVER["REQUEST_METHOD"] == "POST") {
+					$name = $_POST["name"];
+					$num  = $_POST["pass-length"];
+					echo "<p>hello $name + $num</p>";
+				}
+			?>
+		</div>
 	</body>
 </html>
