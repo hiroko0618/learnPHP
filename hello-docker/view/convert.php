@@ -1,6 +1,5 @@
 <?php
-function convertToRomaji ($keyword) {
-	$keyLen = mb_strlen($keyword);
+function convertToRomaji ($keyword, $keyLen) {
 
 	$getRomaji = array (
 		'あ' => 'a',  'い' => 'i',   'う' => 'u',  'え' => 'e',  'お' => 'o',
@@ -30,8 +29,6 @@ function convertToRomaji ($keyword) {
 			
 		}
 		return $result;
-	} else {
-		return $result = '文字が入力されていません。';
 	}
 }
 ?>
