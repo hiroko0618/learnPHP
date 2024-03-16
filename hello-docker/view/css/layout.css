@@ -10,6 +10,7 @@ form {
 	width: 400px;
 	text-align: center;
 	padding-top: 100px;
+	padding-bottom: 50px;
 	margin: 0 auto;
 }
 
@@ -67,4 +68,10 @@ input::-webkit-inner-spin-button {
 .password {
 	text-align: left; 
 	position:absolute;
+}
+
+hr {
+	background-color: #f5f5f5;
+	border: none;
+	height: 1px;
 }
