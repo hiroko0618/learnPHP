@@ -28,9 +28,9 @@
 
 				if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$keyword = $_POST["keyword"];
-					$number  = $_POST["pass-length"];
+					$number  = $_POST["passLen"];
 
-					$pass = isAlpha($keyword);
+					$pass = isAlpha($keyword, $passLen);
 
 					echo "<p>$pass</p>";
 				}
