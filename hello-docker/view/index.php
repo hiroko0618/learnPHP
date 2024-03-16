@@ -24,13 +24,13 @@
 
 			<hr>
 			<?php
-				require_once 'convert.php';
+				require_once 'check.php';
 
 				if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$keyword = $_POST["keyword"];
 					$number  = $_POST["pass-length"];
 
-					$pass = convertToRomaji($keyword);
+					$pass = isAlpha($keyword);
 
 					echo "<p>$pass</p>";
 				}
