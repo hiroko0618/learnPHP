@@ -2,20 +2,6 @@
 
 function convertToRomaji ($keyword, $keyLen, $passLen) {
 
-	if (0 < $keyLen) {
-		for ($i=0; $i < $keyLen; $i++) {
-			$sliceKey = mb_substr($keyword, $i, 1);
-			
-			if (array_key_exists($sliceKey, $getRomaji)) {
-				$newKey .= $getRomaji[$sliceKey];
-				$result .= $newKey;
-
-				$newKey = '';
-			}
-		}
-		return $result;
-	}
-
 	$getRomaji = [
 		'あ' => 'a',  'い' => 'i',   'う' => 'u',  'え' => 'e',  'お' => 'o',
 		'か' => 'ka', 'き' => 'ki',  'く' => 'ku', 'け' => 'ke', 'こ' => 'ko',
@@ -44,5 +30,23 @@ function convertToRomaji ($keyword, $keyLen, $passLen) {
         	'びゃ' => 'bya', 'びゅ' => 'byu', 'びょ' => 'byo',
         	'ぴゃ' => 'pya', 'ぴゅ' => 'pyu', 'ぴょ' => 'pyo',
 	];
+
+	if (0 < $keyLen) {
+		$result = '';
+
+		for ($i=0; $i < $keyLen; $i++) {
+			$sliceKey = mb_substr($keyword, $i, 1);
+
+			if (array_key_exists($sliceKey, $getRomaji)) {
+				$newKey .= $getRomaji[$sliceKey];
+				$result .= $newKey;
+
+				$newKey = '';
+			} else {
+				$result .= $sliceKey;
+			}
+		}
+		return $result;
+	}
 }
 ?>
