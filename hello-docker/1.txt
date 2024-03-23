@@ -1,0 +1,25 @@
+FROM php:7.4.8-apache
+
+# Define build dependencies for PHP Mecab
+ENV build_deps_phpmecab autoconf git
+
+# Copy php.mecab.ini to PHP configuration directory
+COPY php.mecab.ini /usr/local/etc/php/conf.d/
+
+# Install build dependencies, clone php-mecab, build and install it
+RUN apt update \
+    && apt install -y --no-install-recommends ${build_deps_phpmecab} \
+    && git clone https://github.com/rsky/php-mecab.git \
+    && cd ./php-mecab/mecab \
+    && phpize \
+    && ./configure --with-php-config=/usr/local/bin/php-config --with-mecab=/usr/local/bin/mecab-config \
+    && make \
+    && make test \
+    && make install \
+    && cd \
+    && rm -rf php-mecab \
+    && apt remove -y ${build_deps_phpmecab}
+
+# Install additional PHP extensions
+RUN docker-php-ext-install pdo pdo_mysql
+

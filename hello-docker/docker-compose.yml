@@ -8,11 +8,18 @@ services:
       - ./view:/var/www/html
     ports:
       - 8888:80
+        #build:
+        #context: .
+        #dockerfile: ./view/Dockerfile
+        #args:
+        #- COMMIT_SHA=${GIT_COMMIT_SHA}
+  php-mecab:
     build:
-        context: .
-        dockerfile: ./view/Dockerfile
-        args:
-        - COMMIT_SHA=${GIT_COMMIT_SHA}
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/view
+    tty: true
   mysql:
     image: mysql:8.0.3
     volumes:
